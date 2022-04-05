@@ -10,7 +10,7 @@ body {
     margin-bottom: 4px;
     border: 1px solid green;
 }
-#input-btn {
+button {
     background-color: green;
     border: none;
     padding: 10px 20px;
