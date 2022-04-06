@@ -1,3 +1,4 @@
+// chrome://extensions/
 let myLeads = []
 const inputEl = document.querySelector("#input-el")
 const a = document.querySelector("#input-btn")
