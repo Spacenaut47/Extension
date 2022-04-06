@@ -4,7 +4,7 @@ const a = document.querySelector("#input-btn")
 const b = document.querySelector("#unord")
 a.addEventListener("click", function(){
     myLeads.push(inputEl.value)
-    inputEl.value = ""
+    inputEl.value = " "
     renderLeads()
 })
 function renderLeads ()
