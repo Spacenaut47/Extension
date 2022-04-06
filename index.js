@@ -5,6 +5,8 @@ const b = document.querySelector("#unord")
 a.addEventListener("click", function(){
     myLeads.push(inputEl.value)
 })
+let listItems = ""
 for(let i = 0; i < myLeads.length;i++){
-    b.innerHTML += "<li>"+myLeads[i]+"</li> "
+    listItems += "<li>"+myLeads[i]+"</li> "
 }
+b.innerHTML = listItems
