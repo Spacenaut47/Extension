@@ -4,7 +4,11 @@ const inputEl = document.querySelector("#input-el")
 const a = document.querySelector("#input-btn")
 const b = document.querySelector("#unord")
 const c = document.querySelector("#delete-all")
+const d = document.querySelector("#tab-btn")
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+const tabs = [
+    {url : "www.google.com"}
+]
 console.log(leadsFromLocalStorage)
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
@@ -31,5 +35,10 @@ a.addEventListener("click", function(){
 c.addEventListener("click", function() {
     localStorage.clear()
     myLeads = []
+    render(myLeads)
+})
+d.addEventListener("click", function(){
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myleads", JSON.stringify(myLeads))
     render(myLeads)
 })
