@@ -8,28 +8,28 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 console.log(leadsFromLocalStorage)
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
-a.addEventListener("click", function(){
-    myLeads.push(inputEl.value)
-    inputEl.value = " "
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderLeads()
-})
-c.addEventListener("click", function() {
-    localStorage.clear()
-    myLeads = []
-    renderLeads()
-})
-function renderLeads ()
+function render (leads)
 {
     let listItems = ""
-    for(let i = 0; i < myLeads.length;i++){
+    for(let i = 0; i < leads.length;i++){
         listItems += `
         <li>
-            <a target ='_blank' href = '${myLeads[i]}'> ${myLeads[i]}
+            <a target ='_blank' href = '${leads[i]}'> ${leads[i]}
             </a>
         </li>`
     }
     b.innerHTML = listItems
 }
+a.addEventListener("click", function(){
+    myLeads.push(inputEl.value)
+    inputEl.value = " "
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    render(myLeads)
+})
+c.addEventListener("click", function() {
+    localStorage.clear()
+    myLeads = []
+    render(myLeads)
+})
