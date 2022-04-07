@@ -11,9 +11,13 @@ body {
     margin-bottom: 4px;
     border: 1px solid green;
 }
+#delete-all {
+    background-color: white;
+    color: green;
+}
 button {
     background-color: green;
-    border: none;
+    border: 1px solid green;
     padding: 10px 20px;
     color: white;
     font-weight: bold;
