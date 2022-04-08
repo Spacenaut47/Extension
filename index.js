@@ -6,10 +6,6 @@ const b = document.querySelector("#unord")
 const c = document.querySelector("#delete-all")
 const d = document.querySelector("#tab-btn")
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
-const tabs = [
-    {url : "www.google.com"}
-]
-console.log(leadsFromLocalStorage)
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
     render(myLeads)
@@ -38,7 +34,9 @@ c.addEventListener("click", function() {
     render(myLeads)
 })
 d.addEventListener("click", function(){
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myleads", JSON.stringify(myLeads))
-    render(myLeads)
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
+    })
 })
